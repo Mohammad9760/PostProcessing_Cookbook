@@ -1,6 +1,7 @@
 # Grayscaling 
 ![grayscaled render](./grayscaling.png)
-an image can be broken down into two components: the [Chroma](https://en.wikipedia.org/wiki/Chrominance) (Color) and the [Luma](https://en.wikipedia.org/wiki/Luma_(video)) (Brightness). if we desaturate an image completely (remove color), what is left is the [Grayscaled](https://en.wikipedia.org/wiki/Grayscale) version of that image. some people might refer to grayscale as "black and white", however that's not a technically accurate term for that. black and white would mean that all the pixels of the image is either black or white, the image would be made of only 2 colors ([Binary Image](https://en.wikipedia.org/wiki/Binary_image)). a grayscale image on the other hand could be made of 50 shades of gray (usually much more).<br>
+an image can be broken down into two components: the [Chroma](https://en.wikipedia.org/wiki/Chrominance) (Color) and the [Luma](https://en.wikipedia.org/wiki/Luma_(video)) (Brightness). if we desaturate an image completely (remove color), what is left is the [Grayscaled](https://en.wikipedia.org/wiki/Grayscale) version of that image. <br>
+some people might refer to grayscale as "black and white", however that's not a technically accurate term for that. black and white would mean that all the pixels of the image is either black or white, the image would be made of only 2 colors ([Binary Image](https://en.wikipedia.org/wiki/Binary_image)). a grayscale image on the other hand could be made of 50 shades of gray (usually much more).<br>
 <br>
 ## How It Works?
 to grayscale the screen our fragment shader runs for every pixel and replace the color with a shade of gray that represents the brightness of that pixel.<br>
@@ -57,7 +58,7 @@ this method uses the [Dot Product](https://en.wikipedia.org/wiki/Dot_product) of
 ```
 
 > [Photometry](https://en.wikipedia.org/wiki/Photometry_(optics)) is the science of measuring light in terms of its perceived brightness to the human eye. The human eye is most sensetive to green light, followed by red light, and least sensetive to blue light.<br>
-> if we average the RGB to calculate the pixel brightness, a completely blue pixel: ```vec3(0.0, 0.0, 1.0)``` and a completely green pixel: ```vec3(0.0, 1.0, 0.0)``` would both become ```(0.333, 0.333, 0.333)``` and they would look exactly the same, and therefore it would not be an accurate representation of how the human eye perceives brightness according to the science of photometry.<br>
+> if we average the RGB to calculate the pixel brightness, a completely blue pixel```vec3(0.0, 0.0, 1.0)```and a completely green pixel```vec3(0.0, 1.0, 0.0)```would both become```(0.333, 0.333, 0.333)```and they would look exactly the same, and therefore it would not be an accurate representation of how the human eye perceives brightness.<br>
 > The luma coefficients work because they take into account the way the human eye perceives brightness.
 > ![](./luma_grayscaled.gif)
 > grayscaled with luma coefficients<br>
@@ -71,22 +72,21 @@ this method uses the [Dot Product](https://en.wikipedia.org/wiki/Dot_product) of
 
 ### step 3: grayscale the pixel
 
-we compose a vector4 that has ```pixelBrightness``` for the RGB and ```1.0``` for the Alpha(full opacity).
+we compose a vector4 that has```pixelBrightness```for the RGB and```1.0```for the Alpha (full opacity).
 
 ```glsl
 	vec4 grayscale = vec4(vec3(pixelBrightness), 1.0);
 ```
 
-> TL;DR
-> there's quite a bit of flexibility in terms of syntax when it comes to composing vectors. if we pass only one scalar (numerical quantity) to the vector's constructor, it will construct a vector that has the same scalar for all of the components(xyz...), this is known as a uniform vector(**DO NOT** confuse with the ```uniform``` keyword; they're totally not the same thing!).```vec3(pixelBrightness)``` would produce the same vector as ```vec3(pixelBrightness, pixelBrightness, pixelBrightness)```. you can compose a vector by passing any combonation of vectors and scalars, for example ```vec4(vec3(pixelBrightness), 1.0)``` and ```vec4(pixelBrightness, pixelBrightness, pixelBrightness, 1.0)``` would produce the same vector as well. 
+> there's quite a bit of flexibility in terms of syntax when it comes to composing vectors. if we pass only one scalar (numerical quantity) to the vector's constructor, it will construct a vector that has the same scalar for all of the components(xyz...), this is known as a uniform vector (**DO NOT** confuse with the```uniform```keyword; they're totally not the same thing!).```vec3(pixelBrightness)```would produce the same vector as```vec3(pixelBrightness, pixelBrightness, pixelBrightness)```.<br> you can compose a vector by passing any combonation of vectors and scalars, for example```vec4(vec3(pixelBrightness), 1.0)``` and ```vec4(pixelBrightness, pixelBrightness, pixelBrightness, 1.0)``` would produce the same vector as well. 
 
 
 next we need to output this grayscaled pixel:
 ```glsl
 COLOR = grayscale;
 ```
-there's a built-in variable in Godot shaders called ```COLOR``` which is the currect pixel's color.<br>
-in some shading programs we might have to return the color but in Godot the fragment shader is a ```void``` function.<br>
+there's a built-in variable in Godot shaders called```COLOR```which is the currect pixel's color.<br>
+in some shading programs we might have to return the color but in Godot the fragment shader is a```void```function.<br>
 <br>
 here's the final shader:
 ```glsl
