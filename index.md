@@ -6,18 +6,7 @@
 
 - Chapter 0: [Getting Started]()
 - Chapter 1: [Grayscaling](./Chapters/Grayscaling/grayscaling.md)
-- Chapter 2: Vignette
-- Chapter 3: Chromatic aberration
-- Chapter 4: Pixelation
-- Chapter 5: Film grain
-- Chapter ?: Sepia Toning
-- Chapter ?: color-grading with a LUT
-- Chapter ?: Night-vision
-- Chapter ?: Infrared-vision
-- Chapter ?: Under Water Effect
-- Chapter ?: Fisheye
-- Chapter ?: Blood Splash
-- Chapter ?: Damage Effect
+- Chapter 2: [Vignette](./Chapters/Vignette/vignette.md)
 
 Each chapter in this book is contained in a separate file, which includes text, images, and videos. You can access each chapter by clicking on the links above.
 

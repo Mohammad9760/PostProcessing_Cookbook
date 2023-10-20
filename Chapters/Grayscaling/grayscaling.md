@@ -55,33 +55,19 @@ this method uses the [Dot Product](https://en.wikipedia.org/wiki/Dot_product) of
     float pixelBrightness = dot(pixelColor.rgb, vec3(0.299, 0.587, 0.114));
 
 ```
-<details markdown open>
 
-  <summary>TLDR</summary>
+> [Photometry](https://en.wikipedia.org/wiki/Photometry_(optics)) is the science of measuring light in terms of its perceived brightness to the human eye. The human eye is most sensetive to green light, followed by red light, and least sensetive to blue light.<br>
+> if we average the RGB to calculate the pixel brightness, a completely blue pixel: ```vec3(0.0, 0.0, 1.0)``` and a completely green pixel: ```vec3(0.0, 1.0, 0.0)``` would both become ```(0.333, 0.333, 0.333)``` and they would look exactly the same, and therefore it would not be an accurate representation of how the human eye perceives brightness according to the science of photometry.<br>
+> The luma coefficients work because they take into account the way the human eye perceives brightness.
+> ![](./luma_grayscaled.gif)
+> grayscaled with luma coefficients<br>
+> ![](./RGBavr_grayscaled.gif)
+> grayscaled by averaging RGB<br>
+
+> ![coefficient vs averaging](./coefficient_vs_averaging.png)
+> left: averaging RGB right:luma coefficients<br>pay attention to the light bulbs! 
 
 
-  > [Photometry](https://en.wikipedia.org/wiki/Photometry_(optics)) is the science of measuring light in terms of its perceived brightness to the human eye. The human eye is most sensetive to green light, followed by red light, and least sensetive to blue light.<br>
-  > if we average the RGB to calculate the pixel brightness, a completely blue pixel: ```vec3(0.0, 0.0, 1.0)``` and a completely green pixel: ```vec3(0.0, 1.0, 0.0)``` would both become ```(0.333, 0.333, 0.333)``` and they would look exactly the same, and therefore it would not be an accurate representation of how the human eye perceives brightness according to the science of photometry.<br>
-  > The luma coefficients work because they take into account the way the human eye perceives brightness.
-  > <video controls>
-
-  <source src="./luma_coefficients.mp4" type="video/mp4">
-
-  </video>
-
-  > grayscaled with luma coefficients<br>
-  > <video controls>
-
-  <source src="./averaging_RGB.mp4" type="video/mp4">
-
-  </video>
-
-  > grayscaled by averaging RGB<br>
-
-  > ![coefficient vs averaging](./coefficient_vs_averaging.png)
-  > left: averaging RGB right:luma coefficients<br>pay attention to the light bulbs! 
-
-</details>
 
 ### step 3: grayscale the pixel
 
@@ -91,13 +77,9 @@ we compose a vector4 that has ```pixelBrightness``` for the RGB and ```1.0``` fo
 	vec4 grayscale = vec4(vec3(pixelBrightness), 1.0);
 ```
 
-<details markdown open> 
-
-  <summary>TLDR</summary>
-
+> TL;DR
 > there's quite a bit of flexibility in terms of syntax when it comes to composing vectors. if we pass only one scalar (numerical quantity) to the vector's constructor, it will construct a vector that has the same scalar for all of the components(xyz...), this is known as a uniform vector(**DO NOT** confuse with the ```uniform``` keyword; they're totally not the same thing!).```vec3(pixelBrightness)``` would produce the same vector as ```vec3(pixelBrightness, pixelBrightness, pixelBrightness)```. you can compose a vector by passing any combonation of vectors and scalars, for example ```vec4(vec3(pixelBrightness), 1.0)``` and ```vec4(pixelBrightness, pixelBrightness, pixelBrightness, 1.0)``` would produce the same vector as well. 
 
-</details>
 
 next we need to output this grayscaled pixel:
 ```glsl
