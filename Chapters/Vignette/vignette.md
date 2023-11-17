@@ -20,18 +20,18 @@ void fragment() {
 }
 
 ```
-we add the following line above the ```fragment``` definition to declare a uniform that gives us access to the screen texture:
+we add the following line above the```fragment```definition to declare a uniform that gives us access to the screen texture:
 ```glsl
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 ```
 ### step 1: get the pixel distance from screen center
-the ```SCREEN_UV``` is the current pixel's uv coordinates. uv coorditates are between 0-1 and therefore the center of the screen would be at (0.5, 0.5) coordinates.<br>
+the```SCREEN_UV```is the current pixel's uv coordinates. uv coorditates are between 0-1 and therefore the center of the screen would be at (0.5, 0.5) coordinates.<br>
 we get the distance of the current pixel from the center of the screen and store it in a variable called```dist```.
 ```glsl
 float dist = distance(SCREEN_UV, vec2(0.5, 0.5));
 ```
->note that the calculated distance is not in *pixels* but instead a normalized(0-1) distance in uv coordinates. we could calculate the pixel position by multiplying the uv with ```SCREEN_PIXEL_SIZE```but we won't cause we are going to use the distance as the interpolation factor and we need it to be normalized anyway.<br>
->we can use ```vec2(0.5)``` to get the center of the screen as well, the constructor will create a vec2 with 0.5 for both X and Y.
+>note that the calculated distance is not in *pixels* but instead a normalized(0-1) distance in uv coordinates. we could calculate the pixel position by multiplying the uv with```SCREEN_PIXEL_SIZE```but we won't cause we are going to use the distance as the interpolation factor and we need it to be normalized anyway.<br>
+>we can use```vec2(0.5)```to get the center of the screen as well, the constructor will create a vec2 with 0.5 for both X and Y.
 
 ### step 2: create vignette mask
 let's add two properties for controlling the radius and sharpness of the vignette.
@@ -80,23 +80,56 @@ and we use that in the lerp instead:
 ```
 screen = mix(screen, vignette_color, vignette_mask);
 ```
-![a gif to show how to control the vignette color from the inspector]()
+![a gif to show how to control the vignette color from the inspector](./book_change_color.gif)
 
 ### step 4: control vignette's shape
 we calculated the distance of each pixel to the center of the screen with UV coordinates. and because UV coordinates go between 0-1 the vignette's shape will stretch to match the screen aspect ratio.<br>
 ![screen uv](./book_screen_uv.png)
 > the distance from top to bottom, and left to right are both 1.0 and that's why the mask that's made with this UV will be stretched
 
-
-if we want the vignette to be a circle(rather than an oval), we need to respect the aspect ratio when calculating the distance.
+let's add a property to our shader that controls whether the vignette is circular or not(circle or oval).
+```
+uniform bool circular = false;
+```
+if we want the vignette to be a circle, we need to respect the aspect ratio when calculating the distance.
 we can calculate the aspect ratio like this:
 ```
-vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y)
+vec2 aspect_ratio = vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
 ```
-and now we can multiply the```SCREEN_UV```and the center of the screen with it:
+and now we can multiply the```SCREEN_UV```and the center coordinates (```vec2(0.5)```) with it:
 ```
-dist = distance(SCREEN_UV * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y), vec2(0.5) * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y));
+dist = distance(SCREEN_UV * aspect_ratio, vec2(0.5) * aspect_ratio);
 ```
+but we do that only if 'circular' is true:
+```
+float dist = 0.0;
+
+if(circular)
+	dist = distance(SCREEN_UV * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y), vec2(0.5) * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y));
+else
+	dist = distance(SCREEN_UV , vec2(0.5));
+
+```
+> we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
+```
+if(circular)
+	dist = length((SCREEN_UV - vec2(0.5)) * vec2(1.0, SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y));
+else
+	dist = length(SCREEN_UV - vec2(0.5));
+```
+![circular](./book_vignette_circular.mp4)
+<iframe id="video" width="560" height="315" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+## keeping Height or Width?
+
+
+keep width not changing
+vec2(SCREEN_PIXEL_SIZE.y/ SCREEN_PIXEL_SIZE.x, 1.0)
+
+keep height not changing
+vec2(1.0, SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y)
+
+
 
 here's the final shader:
 ```glsl
@@ -105,23 +138,21 @@ shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform float sharpness;
 uniform float radius;
+uniform bool circular = false;
 uniform vec4 vignette_color : source_color = vec4(0, 0, 0, 1);
 
 void fragment() {
-	float dist = distance(SCREEN_UV, vec2(0.5));
-	float vigentte_mask = smoothstep(clamp(sharpness, 0, radius), radius, dist);
-	vec4 screen = texture(SCREEN_TEXTURE, SCREEN_UV);
-	screen = mix(screen, vignette_color, vignette_mask);
-	COLOR = screen;
-}
-
-```
-
-
-```
+	
+	float dist = 0.0;
 	if(circular)
 		dist = distance(SCREEN_UV * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y), vec2(0.5) * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y));
-
-//		dist = length((SCREEN_UV - vec2(0.5)) * vec2(1.0, SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y);
+	else
+		dist = distance(SCREEN_UV , vec2(0.5));
+	
+	float vigenette_mask = smoothstep(clamp(sharpness, 0, radius), radius, dist);
+	vec4 screen = texture(SCREEN_TEXTURE, SCREEN_UV);
+	screen = mix(screen, vignette_color, vigenette_mask);
+	COLOR = screen;
+}
 
 ```
