@@ -107,7 +107,8 @@ else
 
 ```
 > we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
-```
+
+```glsl
 float dist = 0.0;
 
 if(circular)
@@ -116,7 +117,8 @@ else
 	dist = length(SCREEN_UV - vec2(0.5));
 ```
 > we can further shorten in by using a ternary operator instead of an if else statement:
-```
+
+```glsl
 float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
 ```
 > <iframe id="video" width="1008" height="402" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
