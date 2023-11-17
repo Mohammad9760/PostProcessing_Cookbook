@@ -80,7 +80,7 @@ and we use that in the lerp instead:
 ```
 screen = mix(screen, vignette_color, vignette_mask);
 ```
-![a gif to show how to control the vignette color from the inspector](./book_change_color.gif)
+<iframe id="video" width="560" height="315" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ### step 4: control vignette's shape
 we calculated the distance of each pixel to the center of the screen with UV coordinates. and because UV coordinates go between 0-1 the vignette's shape will stretch to match the screen aspect ratio.<br>
