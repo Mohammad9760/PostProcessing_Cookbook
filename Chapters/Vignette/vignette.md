@@ -117,8 +117,7 @@ if(circular)
 else
 	dist = length(SCREEN_UV - vec2(0.5));
 ```
-![circular](./book_vignette_circular.mp4)
-<iframe id="video" width="560" height="315" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+> <iframe id="video" width="560" height="315" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ## keeping Height or Width?
 
