@@ -80,7 +80,7 @@ and we use that in the lerp instead:
 ```
 screen = mix(screen, vignette_color, vignette_mask);
 ```
-<iframe id="video" width="560" height="315" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe id="video" width="1086" height="476" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ### step 4: control vignette's shape
 we calculated the distance of each pixel to the center of the screen with UV coordinates. and because UV coordinates go between 0-1 the vignette's shape will stretch to match the screen aspect ratio.<br>
@@ -96,28 +96,30 @@ we can calculate the aspect ratio like this:
 ```
 vec2 aspect_ratio = vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
 ```
-and now we can multiply the```SCREEN_UV```and the center coordinates (```vec2(0.5)```) with it:
-```
-dist = distance(SCREEN_UV * aspect_ratio, vec2(0.5) * aspect_ratio);
-```
-but we do that only if 'circular' is true:
+and now we can multiply the```SCREEN_UV```and the center coordinates (```vec2(0.5)```) with it if 'circular' is true:
 ```
 float dist = 0.0;
 
 if(circular)
-	dist = distance(SCREEN_UV * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y), vec2(0.5) * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y));
+	dist = distance(SCREEN_UV * aspect_ratio, vec2(0.5) * aspect_ratio);
 else
 	dist = distance(SCREEN_UV , vec2(0.5));
 
 ```
 > we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
 ```
+float dist = 0.0;
+
 if(circular)
 	dist = length((SCREEN_UV - vec2(0.5)) * vec2(1.0, SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y));
 else
 	dist = length(SCREEN_UV - vec2(0.5));
 ```
-> <iframe id="video" width="560" height="315" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+> we can further shorten in by using a ternary operator instead of an if else statement:
+```
+float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
+```
+> <iframe id="video" width="1008" height="402" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ## keeping Height or Width?
 
@@ -138,15 +140,13 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform float sharpness;
 uniform float radius;
 uniform bool circular = false;
+uniform bool keep_height = true;
 uniform vec4 vignette_color : source_color = vec4(0, 0, 0, 1);
 
 void fragment() {
 	
-	float dist = 0.0;
-	if(circular)
-		dist = distance(SCREEN_UV * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y), vec2(0.5) * vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y));
-	else
-		dist = distance(SCREEN_UV , vec2(0.5));
+	vec2 aspect_ratio = keep_height? vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y) : vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0);
+	float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
 	
 	float vigenette_mask = smoothstep(clamp(sharpness, 0, radius), radius, dist);
 	vec4 screen = texture(SCREEN_TEXTURE, SCREEN_UV);
