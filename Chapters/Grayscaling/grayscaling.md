@@ -29,10 +29,10 @@ void fragment() {
 }
 
 ```
-we add a uniform called ```SCREEN_TEXTURE``` (you can call it anything you like).<br> 
-The uniform declaration for ```SCREEN_TEXTURE``` includes two hints: ```hint_screen_texture``` and ```filter_linear_mipmap```. ```hint_screen_texture``` tells Godot that this uniform should be automatically set to the screen texture, and ```filter_linear_mipmap``` specifies that the texture should be filtered using linear interpolation and mipmapping. These hints help ensure that the screen texture is sampled correctly and efficiently in the shader.<br>
-we then sample the ```SCREEN_TEXTURE``` into a variable called ```pixelColor``` using the ```texture()``` function.<br>
-the ```pixelColor``` variable now holds the color of the current pixel, we'll use it to calculate the brightness.<br>
+we add a uniform called```SCREEN_TEXTURE```(you can call it anything you like).<br> 
+The uniform declaration for```SCREEN_TEXTURE```includes two hints:```hint_screen_texture```and```filter_linear_mipmap```. ```hint_screen_texture```tells Godot that this uniform should be automatically set to the screen texture, and```filter_linear_mipmap```specifies that the texture should be filtered using linear interpolation and mipmapping. These hints help ensure that the screen texture is sampled correctly and efficiently in the shader.<br>
+we then sample the```SCREEN_TEXTURE```into a variable called```pixelColor```using the```texture()```function.<br>
+the```pixelColor```variable now holds the color of the current pixel, we'll use it to calculate the brightness.<br>
 ### step 2: calculate the pixel brightness
 there are two methods for calculating the pixel brightness:
 
