@@ -1,6 +1,6 @@
 # Game Post-Processing Effects Cookbook for Godot Developers
 
-![book cover](https://github.com/Mohammad9760/Game_Special_Effects_Cookbook/assets/79392031/23ed1a4c-e41d-4a33-bedf-41af1d0f5f37)
+![book cover](./Postprocessing_cookbook_cover.png)
 
 ## Table of Contents
 

@@ -80,7 +80,7 @@ and we use that in the lerp instead:
 ```
 screen = mix(screen, vignette_color, vignette_mask);
 ```
-<iframe id="video" width="1086" height="476" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe id="video" width="543" height="238" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ### step 4: control vignette's shape
 we calculated the distance of each pixel to the center of the screen with UV coordinates. and because UV coordinates go between 0-1 the vignette's shape will stretch to match the screen aspect ratio.<br>
@@ -108,7 +108,7 @@ else
 ```
 > we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
 
-```glsl
+```glsl+
 float dist = 0.0;
 
 if(circular)
@@ -121,7 +121,7 @@ else
 ```glsl
 float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
 ```
-> <iframe id="video" width="1008" height="402" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+> <iframe id="video" width="5004" height="201" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ## keeping Height or Width?
 
