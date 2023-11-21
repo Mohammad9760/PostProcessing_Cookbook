@@ -106,6 +106,8 @@ else
 	dist = distance(SCREEN_UV , vec2(0.5));
 
 ```
+<iframe id="video" width="378" height="151" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
 > we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
 
 ```glsl+
@@ -121,7 +123,6 @@ else
 ```glsl
 float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
 ```
-> <iframe id="video" width="378" height="151" src="./book_vignette_circular.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ## keeping Height or Width?
 
