@@ -172,15 +172,6 @@ void fragment() {
 }
 
 ```
-<iframe 
-	id="video" 
-	src="./book_vignette_keep_height.mp4"
-	display="block"
-	width="100vw"
-	height="100vh"
-	max-width="100%"
-	margin="0"
-	padding="0"
-	border="0"
-	box-sizing="border-box"
->
+
+<video src="./book_vignette_keep_height.mp4">
+</video>
