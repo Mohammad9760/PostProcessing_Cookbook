@@ -80,7 +80,7 @@ and we use that in the lerp instead:
 ```
 screen = mix(screen, vignette_color, vignette_mask);
 ```
-<iframe id="video" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe id="video" width="100vw" height="100vh" src="./book_vignette_change_color.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 ### step 4: control vignette's shape
 we calculated the distance of each pixel to the center of the screen with UV coordinates. and because UV coordinates go between 0-1 the vignette's shape will stretch to match the screen aspect ratio.<br>
@@ -106,7 +106,7 @@ else
 	dist = distance(SCREEN_UV , vec2(0.5));
 
 ```
-<iframe id="video" src="./book_vignette_circular.mp4" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe id="video" src="./book_vignette_circular.mp4" width="100vw" height="100vh" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
 > we can also write these lines shorter by getting the length of a vector going from center to the current pixel:
 
@@ -146,7 +146,7 @@ then we can use a ternary operator again to evaluate the aspect ratio:
 ```
 	vec2 aspect_ratio = keep_height?vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0) : vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
 ```
-<iframe id="video" src="./book_vignette_keep_height.mp4" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<iframe id="video" src="./book_vignette_keep_height.mp4" width="100vw" height="100vh" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 > when 'keep_height' is not checked the circle's height will change, but when it's checked the height remains the same.
 
 here's the final shader:
