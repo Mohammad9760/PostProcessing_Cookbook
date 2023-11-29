@@ -126,14 +126,28 @@ float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance
 
 ## keeping Height or Width?
 
+we can decide whether the height or the width changes to make the circular vignette effect respect the aspect ratio.
 
-keep width not changing
+
+keep width not changing.
+```
 vec2(SCREEN_PIXEL_SIZE.y/ SCREEN_PIXEL_SIZE.x, 1.0)
+```
 
 keep height not changing
+```
 vec2(1.0, SCREEN_PIXEL_SIZE.x/ SCREEN_PIXEL_SIZE.y)
-
-
+```
+so now we can have another boolean property in our shader that toggles between these two expressions and assigns one of them to the 'aspect_ratio' variable.
+```
+uniform bool keep_height = true;
+```
+then we can use a ternary operator again to evaluate the aspect ratio:
+```
+	vec2 aspect_ratio = keep_height?vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0) : vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
+```
+<iframe id="video" src="./book_vignette_keep_height.mp4" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+> when 'keep_height' is not checked the circle's height will change, but when it's checked the height remains the same.
 
 here's the final shader:
 ```glsl
@@ -148,7 +162,7 @@ uniform vec4 vignette_color : source_color = vec4(0, 0, 0, 1);
 
 void fragment() {
 	
-	vec2 aspect_ratio = keep_height? vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y) : vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0);
+	vec2 aspect_ratio = keep_height?vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0) : vec2(1.0, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
 	float dist = circular? length((SCREEN_UV - vec2(0.5)) * aspect_ratio) : distance(SCREEN_UV , vec2(0.5));
 	
 	float vigenette_mask = smoothstep(clamp(sharpness, 0, radius), radius, dist);
