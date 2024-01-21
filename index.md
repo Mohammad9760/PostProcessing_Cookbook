@@ -4,9 +4,12 @@
 
 ## Table of Contents
 
-- Chapter 0: [Getting Started]()
+- Chapter 0: [Getting Started](./Chapters/Getting_Started/getting_started.md)
 - Chapter 1: [Grayscaling](./Chapters/Grayscaling/grayscaling.md)
-- Chapter 2: [Vignette](./Chapters/Vignette/vignette.md)
+- Chapter ?: [Vignette](./Chapters/Vignette/vignette.md)
+- Chapter ?: [Chromatic Aberration](./Chapters/Chromatic_Aberration/chromatic_aberration.md)
+- Chapter ?: [Pixelation]
+- Chapter ?: [Film Grain]
 
 Each chapter in this book is contained in a separate file, which includes text, images, and videos. You can access each chapter by clicking on the links above.
 
