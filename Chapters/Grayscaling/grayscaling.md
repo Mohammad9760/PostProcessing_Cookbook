@@ -25,7 +25,7 @@ shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 void fragment() {
-	vec4 pixelColor = texture(SCREEN_TEXTURE, UV);
+	vec4 pixelColor = texture(SCREEN_TEXTURE, SCREEN_UV);
 }
 
 ```
@@ -45,15 +45,19 @@ this method simply averages the red, green, and blue values of the pixel color t
 
 
 ```glsl
-	float pixelBrightness = (pixelColor.r + pixelColor.g + pixelColor.b) / 3.0;
+float pixelBrightness = (pixelColor.r + pixelColor.g + pixelColor.b) / 3.0;
 
 ```
 
 #### method 2
 this method uses the [Dot Product](https://en.wikipedia.org/wiki/Dot_product) of the pixel color (in RGB format) and a vector of weights (0.299, 0.587, 0.114) known as the 'Luma Coefficients' to calculate the brightness. This method is based on the fact that the human eye is more sensitive to green light than to red or blue, so the weights are chosen to reflect this sensitivity.
-
+we can store the luma coefficients in a constant declared above our fragment function.
 ```glsl
-    float pixelBrightness = dot(pixelColor.rgb, vec3(0.299, 0.587, 0.114));
+const vec3 LUMA_COEFFICIENTS = vec3(0.299, 0.587, 0.114);
+```
+and then use it to calculate the pixel's luma.
+```glsl
+float pixelBrightness = dot(pixelColor.rgb, LUMA_COEFFICIENTS);
 
 ```
 
@@ -91,12 +95,18 @@ in some shading programs we might have to return the color but in Godot the frag
 here's the final shader:
 ```glsl
 shader_type canvas_item;
+
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform vec4 tint : source_color = vec4(0);
+const vec3 LUMA_COEFFICIENTS = vec3(0.299, 0.587, 0.114);
 
 void fragment() {
-  vec4 pixelColor = texture(SCREEN_TEXTURE, UV);
-  float pixelBrightness = dot(pixelColor.rgb, vec3(0.299, 0.587, 0.114));
-  vec4 grayscale = vec4(vec3(pixelBrightness), 1.0);
-  COLOR = grayscale;
+	
+	vec4 pixelColor = texture(SCREEN_TEXTURE, UV);
+	float pixelBrightness = dot(pixelColor.rgb, LUMA_COEFFICIENTS);
+	vec4 grayscale = vec4(vec3(pixelBrightness), 1.0);
+	COLOR = grayscale;
 }
+
+
 ```
