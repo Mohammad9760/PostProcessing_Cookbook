@@ -1,12 +1,12 @@
 # Chromatic Aberration
-![]()
+![](./chromatic_aberration.png)
 Chromatic aberration also known as [Chromatic Distortion](https://en.wikipedia.org/wiki/Chromatic_aberration) is an optical phenomenon that occurs when different colors of light do not converge at the same point after passing through a lens, resulting in a dispersion of colored fringes around the edges.This effect is particularly noticeable in high-contrast areas of an image. 
-
+![](./chomatic_aberration_demo.png)
 we can deliberately introduce chromatic aberration as an artistic effect to add visual interest or a sense of distortion as well.
 
 ## How It Works?
 To Create Chromatic Distortion, we can disperse the different color channels (RGB), by adding an offset to them.
-
+![](./chromatic_aberration_how_it_works.png)
 ## The Recipe
 add a new ColorRect and make it Fullscreen and add a new ShaderMaterial to it and create a new shader for it([See How](./Chapters/Getting_Started/getting_started.html)).<br>
 a new shader looks like this:
@@ -30,9 +30,9 @@ void fragment() {
 }
 
 ```
-we want to read the screen so we add this line to our shader '''uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;''' this tells Godot to assign the screen texture in this uniform that we called SCREEN_TEXTURE.
+we want to read the screen so we add this line to our shader ```uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;``` this tells Godot to assign the screen texture in this uniform that we called SCREEN_TEXTURE.
 
-then we can sample this texture using the '''texture()''' function with the screen UV. that gives us the color for this pixel/fragment. we can then access each color using '''.r''' or '''.b''' and '''.g'''.
+then we can sample this texture using the ```texture()``` function with the screen UV. that gives us the color for this pixel/fragment. we can then access each color using ```.r``` or ```.b``` and ```.g```.
 
 we store each color channel in a variable named r, g and b.
 
