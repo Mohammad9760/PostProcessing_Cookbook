@@ -1,11 +1,16 @@
 # Chromatic Aberration
 ![chromatic aberration effect](./chromatic_aberration.png)
 Chromatic aberration also known as [Chromatic Distortion](https://en.wikipedia.org/wiki/Chromatic_aberration) is an optical phenomenon that occurs when different colors of light do not converge at the same point after passing through a lens, resulting in a dispersion of colored fringes around the edges.This effect is particularly noticeable in high-contrast areas of an image. 
-![visible chromatic aberration in high contrast areas](./chomatic_aberration_demo.png)
+
+
+![visible chromatic aberration in high contrast areas](./chromatic_aberration_demo.png)
+
 we can deliberately introduce chromatic aberration as an artistic effect to add visual interest or a sense of distortion as well.
 
 ## How It Works?
 To Create Chromatic Distortion, we can disperse the different color channels (RGB), by adding an offset to them.
+
+
 ![how chromatic aberration works](./chromatic_aberration_how_it_works.png)
 ## The Recipe
 add a new ColorRect and make it Fullscreen and add a new ShaderMaterial to it and create a new shader for it([See How](./Chapters/Getting_Started/getting_started.html)).<br>
@@ -59,6 +64,8 @@ then we can add this offset to the UV of one color channel and subtract it from 
 ### step 3: Recombine the color channels
 
 finally, we can combine the offseted r, g and b channels back together and use it for the result of our fragment shader.
+
+![adding offset](chromatic_aberration_offset.gif)
 
 ```glsl
 shader_type canvas_item;

@@ -1,6 +1,5 @@
 # Game Post-Processing Effects Cookbook for Godot Developers
 
-![book cover](./Postprocessing_cookbook_cover.png)
 
 ## Table of Contents
 
