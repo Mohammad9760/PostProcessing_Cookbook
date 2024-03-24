@@ -102,7 +102,7 @@ const vec3 LUMA_COEFFICIENTS = vec3(0.299, 0.587, 0.114);
 
 void fragment() {
 	
-	vec4 pixelColor = texture(SCREEN_TEXTURE, UV);
+	vec4 pixelColor = texture(SCREEN_TEXTURE, SCREEN_UV);
 	float pixelBrightness = dot(pixelColor.rgb, LUMA_COEFFICIENTS);
 	vec4 grayscale = vec4(vec3(pixelBrightness), 1.0);
 	COLOR = grayscale;

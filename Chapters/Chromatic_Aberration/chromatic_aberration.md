@@ -29,9 +29,9 @@ shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 
 void fragment() {
-	float r = texture(SCREEN_TEXTURE, UV).r;
-	float g = texture(SCREEN_TEXTURE, UV).g;
-	float b = texture(SCREEN_TEXTURE, UV).b;
+	float r = texture(SCREEN_TEXTURE, SCREEN_UV).r;
+	float g = texture(SCREEN_TEXTURE, SCREEN_UV).g;
+	float b = texture(SCREEN_TEXTURE, SCREEN_UV).b;
 }
 
 ```
@@ -48,9 +48,9 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform vec2 offset = vec2(0.002, 0.001);
 
 void fragment() {
-	float r = texture(SCREEN_TEXTURE, UV + offset).r;
-	float g = texture(SCREEN_TEXTURE, UV).g;
-	float b = texture(SCREEN_TEXTURE, U - offset).b;
+	float r = texture(SCREEN_TEXTURE, SCREEN_UV + offset).r;
+	float g = texture(SCREEN_TEXTURE, SCREEN_UV).g;
+	float b = texture(SCREEN_TEXTURE, SCREEN_UV - offset).b;
 }
 
 ```
@@ -73,9 +73,9 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform vec2 offset = vec2(0.002, 0.001);
 
 void fragment() {
-	float r = texture(SCREEN_TEXTURE, UV + offset).r;
-	float g = texture(SCREEN_TEXTURE, UV).g;
-	float b = texture(SCREEN_TEXTURE, U - offset).b;
+	float r = texture(SCREEN_TEXTURE, SCREEN_UV + offset).r;
+	float g = texture(SCREEN_TEXTURE, SCREEN_UV).g;
+	float b = texture(SCREEN_TEXTURE, SCREEN_UV - offset).b;
 
 	COLOR = vec4(r, g, b, 1.0);
 }
