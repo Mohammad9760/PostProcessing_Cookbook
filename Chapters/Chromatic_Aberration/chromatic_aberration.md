@@ -68,7 +68,7 @@ finally, we can combine the offseted r, g and b channels back together and use i
 ![adding offset](chromatic_aberration_offset.gif)
 
 <pre>
-```
+<code>
 shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform vec2 offset = vec2(0.002, 0.001);
@@ -80,9 +80,9 @@ void fragment() {
 
 	COLOR = vec4(r, g, b, 1.0);
 }
+</code>
 
-```
-</pre>
+<pre>
 
 <script>
 	function CopyToClipboard(params) {
