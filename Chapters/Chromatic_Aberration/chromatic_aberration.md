@@ -67,7 +67,8 @@ finally, we can combine the offseted r, g and b channels back together and use i
 
 ![adding offset](chromatic_aberration_offset.gif)
 
-```glsl
+<pre>
+```
 shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform vec2 offset = vec2(0.002, 0.001);
@@ -81,3 +82,40 @@ void fragment() {
 }
 
 ```
+</pre>
+
+<script>
+	function CopyToClipboard(params) {
+  const codeContainer = document.getElementsByTagName('pre');
+  // debugger
+  for (const item of codeContainer) {
+    const button = document.createElement('button');
+    button.innerText = 'Copy';
+    button.style.position = 'absolute';
+    button.style.top = "0";
+    button.style.right = "0";
+    button.style.fontSize = "10px";
+    button.style.border = "none";
+    button.style.background = "gainsboro";
+    button.style.borderRadius = "0px 3px 0px 3px";
+    button.className = 'copy-btn';
+    button.onclick = function () {
+      let x = item.firstChild.textContent
+      console.log('iiner', x)
+      const el = document.createElement('textarea');
+      el.value = x;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      button.innerText = 'Copied';
+      setTimeout(() => {
+        button.innerText = 'Copy';
+      }, 1000);
+    };
+    item.append(button);
+  }
+}
+
+export default CopyToClipboard;
+</script>
