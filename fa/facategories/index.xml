@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Facategories on PaperMod RTL</title>
+    <link>http://localhost:1313/fa/facategories/</link>
+    <description>Recent content in Facategories on PaperMod RTL</description>
+    <image>
+      <title>PaperMod RTL</title>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.132.1</generator>
+    <language>fa</language>
+    <atom:link href="http://localhost:1313/fa/facategories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
