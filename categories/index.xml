@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Full-Screen Shaders</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://mohammad9760.github.io/PostProcessing_Cookbook/categories/</link>
     <description>Recent content in Categories on Full-Screen Shaders</description>
     <image>
       <title>Full-Screen Shaders</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</url>
+      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.132.1</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mohammad9760.github.io/PostProcessing_Cookbook/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

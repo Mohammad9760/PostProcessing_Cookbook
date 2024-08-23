@@ -2,55 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/unity_hdrp/categories/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="http://localhost:1313/godot/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="http://localhost:1313/unity_hdrp/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/unity_hdrp/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="http://localhost:1313/godot/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="http://localhost:1313/unity_hdrp/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/"
                 />
   </url><url>
-    <loc>http://localhost:1313/unity_hdrp/tags/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="http://localhost:1313/godot/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="http://localhost:1313/unity_hdrp/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/"
                 />
   </url>
 </urlset>

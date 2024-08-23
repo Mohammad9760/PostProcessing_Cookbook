@@ -2,17 +2,17 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/godot/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/godot/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/unity_hdrp/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/sitemap.xml</loc>
     
   </sitemap>
   
