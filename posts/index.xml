@@ -11,13 +11,14 @@
     </image>
     <generator>Hugo -- 0.132.1</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 07 Sep 2024 18:35:39 +0330</lastBuildDate>
     <atom:link href="https://mohammad9760.github.io/PostProcessing_Cookbook/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/grayscaling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/grayscaling/</guid>
-      <description>Grayscaling an image can be broken down into two components: the Chroma (Color) and the Luma (Brightness). if we desaturate an image completely (remove color), what is left is the Grayscaled version of that image. some people might refer to grayscale as &amp;ldquo;black and white&amp;rdquo;, however that&amp;rsquo;s not a technically accurate term for that. black and white would mean that all the pixels of the image is either black or white, the image would be made of only 2 colors (Binary Image).</description>
+      <title>Test Post</title>
+      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/test-post/</link>
+      <pubDate>Sat, 07 Sep 2024 18:35:39 +0330</pubDate>
+      <guid>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/test-post/</guid>
+      <description>there should be a fucking photo up here</description>
     </item>
   </channel>
 </rss>

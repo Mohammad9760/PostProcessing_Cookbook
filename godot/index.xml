@@ -11,14 +11,6 @@
     </image>
     <generator>Hugo -- 0.132.1</generator>
     <language>godot</language>
-    <lastBuildDate>Sat, 07 Sep 2024 16:51:56 +0330</lastBuildDate>
     <atom:link href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Grayscaling</title>
-      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/godot/posts/grayscaling/</link>
-      <pubDate>Sat, 07 Sep 2024 16:51:56 +0330</pubDate>
-      <guid>https://mohammad9760.github.io/PostProcessing_Cookbook/godot/posts/grayscaling/</guid>
-      <description>![grayscaled render](/Grayscaling-godot/grayscaling) ![grayscaled render](static/Grayscaling-godot/grayscaling) ![grayscaled render](/static/Grayscaling-godot/grayscaling) ![grayscaled render](/static/static/Grayscaling-godot/grayscaling) an image can be broken down into two components: the [Chroma](https://en.wikipedia.org/wiki/Chrominance) (Color) and the [Luma](https://en.wikipedia.org/wiki/Luma_(video)) (Brightness). if we desaturate an image completely (remove color), what is left is the [Grayscaled](https://en.wikipedia.org/wiki/Grayscale) version of that image. some people might refer to grayscale as &#34;black and white&#34;, however that&#39;s not a technically accurate term for that. black and white would mean that all the pixels of the image is either black or white, the image would be made of only 2 colors ([Binary Image](https://en.</description>
-    </item>
   </channel>
 </rss>
