@@ -2,55 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/categories/</loc>
+    <loc>http://localhost:1313/PostProcessing_Cookbook/posts/grayscaling/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="unity_hdrp"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/categories/"
+                href="http://localhost:1313/PostProcessing_Cookbook/godot/posts/grayscaling/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/categories/"
+                href="http://localhost:1313/PostProcessing_Cookbook/posts/grayscaling/"
                 />
   </url><url>
-    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/</loc>
+    <loc>http://localhost:1313/PostProcessing_Cookbook/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/"
+                href="http://localhost:1313/PostProcessing_Cookbook/godot/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/"
+                href="http://localhost:1313/PostProcessing_Cookbook/unity_hdrp/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/"
+                href="http://localhost:1313/PostProcessing_Cookbook/categories/"
                 />
   </url><url>
-    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/tags/</loc>
+    <loc>http://localhost:1313/PostProcessing_Cookbook/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/tags/"
+                href="http://localhost:1313/PostProcessing_Cookbook/godot/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/"
+                href="http://localhost:1313/PostProcessing_Cookbook/unity_hdrp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://mohammad9760.github.io/PostProcessing_Cookbook/tags/"
+                href="http://localhost:1313/PostProcessing_Cookbook/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/PostProcessing_Cookbook/posts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="godot"
+                href="http://localhost:1313/PostProcessing_Cookbook/godot/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/PostProcessing_Cookbook/posts/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/PostProcessing_Cookbook/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="godot"
+                href="http://localhost:1313/PostProcessing_Cookbook/godot/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="unity_hdrp"
+                href="http://localhost:1313/PostProcessing_Cookbook/unity_hdrp/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/PostProcessing_Cookbook/tags/"
                 />
   </url>
 </urlset>
