@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/</loc>
     <lastmod>2024-09-07T18:51:15+03:30</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="/godot/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="/unity_hdrp/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/"
                 />
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/</loc>
     <lastmod>2024-09-07T18:51:15+03:30</lastmod>
   </url><url>
-    <loc>/posts/test-post/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/test-post/</loc>
     <lastmod>2024-09-07T18:51:15+03:30</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="/godot/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="/unity_hdrp/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/categories/"
                 />
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="godot"
-                href="/godot/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/godot/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="unity_hdrp"
-                href="/unity_hdrp/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://mohammad9760.github.io/PostProcessing_Cookbook/tags/"
                 />
   </url>
 </urlset>

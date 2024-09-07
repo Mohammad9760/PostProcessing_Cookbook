@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Full-Screen Shaders</title>
-    <link>/</link>
+    <link>https://mohammad9760.github.io/PostProcessing_Cookbook/</link>
     <description>Recent content on Full-Screen Shaders</description>
     <image>
       <title>Full-Screen Shaders</title>
-      <url>/images/papermod-cover.png</url>
-      <link>/images/papermod-cover.png</link>
+      <url>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</url>
+      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.132.1</generator>
     <language>en</language>
     <lastBuildDate>Sat, 07 Sep 2024 18:51:15 +0330</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mohammad9760.github.io/PostProcessing_Cookbook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test Post</title>
-      <link>/posts/test-post/</link>
+      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/test-post/</link>
       <pubDate>Sat, 07 Sep 2024 18:51:15 +0330</pubDate>
-      <guid>/posts/test-post/</guid>
+      <guid>https://mohammad9760.github.io/PostProcessing_Cookbook/posts/test-post/</guid>
       <description> </description>
     </item>
   </channel>

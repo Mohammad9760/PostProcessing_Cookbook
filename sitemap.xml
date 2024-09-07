@@ -2,19 +2,19 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>/en/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/en/sitemap.xml</loc>
     
       <lastmod>2024-09-07T18:51:15+03:30</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>/godot/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/godot/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>/unity_hdrp/sitemap.xml</loc>
+    <loc>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/sitemap.xml</loc>
     
   </sitemap>
   
