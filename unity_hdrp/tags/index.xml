@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Full-Screen Shaders</title>
-    <link>http://localhost:1313/PostProcessing_Cookbook/unity_hdrp/tags/</link>
+    <link>https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/</link>
     <description>Recent content in Tags on Full-Screen Shaders</description>
     <image>
       <title>Full-Screen Shaders</title>
-      <url>http://localhost:1313/PostProcessing_Cookbook/images/papermod-cover.png</url>
-      <link>http://localhost:1313/PostProcessing_Cookbook/images/papermod-cover.png</link>
+      <url>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</url>
+      <link>https://mohammad9760.github.io/PostProcessing_Cookbook/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.132.1</generator>
     <language>unity_hdrp</language>
-    <atom:link href="http://localhost:1313/PostProcessing_Cookbook/unity_hdrp/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://mohammad9760.github.io/PostProcessing_Cookbook/unity_hdrp/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
